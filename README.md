@@ -6,7 +6,7 @@ Raspberry Pi. Can support PWM up to 11Bit per channel, providing true 24bpp
 color with CIE1931 profile.
 
 Supports 3 chains with many 32x32-panels each.
-On a Raspberry Pi 2, you can easily chain 12 panels in that chain (so 36 panels total),
+On a Raspberry Pi 2, you can easily chain 12stronlgy panels in that chain (so 36 panels total),
 but you can stretch that to up to 96-ish panels (32 chain length) and still reach
 around 100Hz refresh rate with full 24Bit color (theoretical - never tested this;
 there might likely be timing problems with the panels that will creep up then).
@@ -575,7 +575,7 @@ ready-made vs. single-chain tradeoff is worthwhile, then you might go for that
 ### Getting it to work
 
 The Adafruit HAT uses a modified pinout, so they forked this library and
-modified the pinout there. However, that fork is _ancient_, so I stronlgy
+modified the pinout there. However, that fork is _ancient_, so I strongly
 suggest to use this original library instead.
 
 In this library here, you have to uncomment the following line in
