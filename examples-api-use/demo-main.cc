@@ -1165,7 +1165,7 @@ int main(int argc, char *argv[]) {
 
   if (striped4multiplexing_display) {
     // Mapping the coordinates of a striped 4 multiplexing 32x16 display with 2 chains per panel
-    transformer->AddTransformer(new Striped4Multiplexing32x16Transformer());
+    matrix->ApplyStaticTransformer(Striped4Multiplexing32x16Transformer());
   }
 
   if (rotation > 0) {
