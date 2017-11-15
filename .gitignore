@@ -1,6 +1,10 @@
 *.o
 *.a
+*~
+*.so
 led-image-viewer
-led-matrix
+demo
 minimal-example
 text-example
+*.dll
+*.exe
