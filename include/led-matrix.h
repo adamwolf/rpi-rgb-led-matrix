@@ -74,6 +74,8 @@ public:
     // Flag: --led-chain
     int chain_length;
 
+    bool striped4multiplexing_display;
+
     // The number of parallel chains connected to the Pi; in old Pis with 26
     // GPIO pins, that is 1, in newer Pis with 40 interfaces pins, that can
     // also be 2 or 3. The effective number of pixels in vertical direction is

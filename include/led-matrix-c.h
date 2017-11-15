@@ -71,6 +71,8 @@ struct RGBLedMatrixOptions {
    */
   int parallel;
 
+  bool striped4multiplexing_display;
+
   /* Set PWM bits used for output. Default is 11, but if you only deal with
    * limited comic-colors, 1 might be sufficient. Lower require less CPU and
    * increases refresh-rate.

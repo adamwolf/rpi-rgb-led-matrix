@@ -1058,7 +1058,6 @@ int main(int argc, char *argv[]) {
   int scroll_ms = 30;
   int rotation = 0;
   bool large_display = false;
-  bool striped4multiplexing_display = false;
 
   const char *demo_parameter = NULL;
   RGBMatrix::Options matrix_options;
@@ -1129,7 +1128,7 @@ int main(int argc, char *argv[]) {
       break;
 
     case 'S':
-      striped4multiplexing_display = true;
+      matrix_options.striped4multiplexing_display = true;
       break;
 
     default: /* '?' */
@@ -1161,11 +1160,6 @@ int main(int argc, char *argv[]) {
     // Or any other U-arrangement.
     matrix->ApplyStaticTransformer(UArrangementTransformer(
                                      matrix_options.parallel));
-  }
-
-  if (striped4multiplexing_display) {
-    // Mapping the coordinates of a striped 4 multiplexing 32x16 display with 2 chains per panel
-    matrix->ApplyStaticTransformer(Striped4Multiplexing32x16Transformer());
   }
 
   if (rotation > 0) {

@@ -136,7 +136,7 @@ RGBMatrix::Options::Options() :
   hardware_mapping("regular"),
 #endif
 
-  rows(32), chain_length(1), parallel(1), pwm_bits(11),
+  rows(32), chain_length(1), parallel(1), pwm_bits(11), striped4multiplexing_display(0),
 
 #ifdef LSB_PWM_NANOSECONDS
     pwm_lsb_nanoseconds(LSB_PWM_NANOSECONDS),
@@ -181,7 +181,12 @@ RGBMatrix::RGBMatrix(GPIO *io, const Options &options)
   active_ = CreateFrameCanvas();
   Clear();
   SetGPIO(io, true);
+  if (options.striped4multiplexing_display)
+  {
+    ApplyStaticTransformer(Striped4Multiplexing32x16Transformer());
+  }
   // ApplyStaticTransformer(...);  // TODO: add 1:8 multiplex for outdoor panels
+
 }
 
 RGBMatrix::RGBMatrix(GPIO *io, int rows, int chained_displays,
